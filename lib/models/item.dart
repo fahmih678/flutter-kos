@@ -16,40 +16,39 @@ class Item {
   final int numberOfBedrooms;
   final int numberOfcupboards;
 
-  Item({
-    this.id=1,
-    this.imageUrl ='',
-    this.name = '',
-    this.rate = 0,
-    this.price = 0,
-    this.duration = 'month',
-    this.city = 'Surakarta',
-    this.province='Jawa Tengah',
-    this.address = '',
-    this.phone = '', 
-    this.mapUrl = '', 
-    this.photos =const[], 
-    this.numberOfKitchens = 0, 
-    this.numberOfBedrooms = 0, 
-    this.numberOfcupboards = 0
-  });
+  Item(
+      {this.id = 1,
+      this.imageUrl = '',
+      this.name = '',
+      this.rate = 0,
+      this.price = 0,
+      this.duration = 'month',
+      this.city = 'Surakarta',
+      this.province = 'Jawa Tengah',
+      this.address = '',
+      this.phone = '',
+      this.mapUrl = '',
+      this.photos = const [],
+      this.numberOfKitchens = 0,
+      this.numberOfBedrooms = 0,
+      this.numberOfcupboards = 0});
 
-  factory Item.fromJson(Map<String, dynamic> json){
+  factory Item.fromJson(Map<String, dynamic> json) {
     return Item(
-      id: json['id'] as int,
-      name : json['name'] as String,
-      city: json['city'] as String,
-      province : json['country'] as String,
-      imageUrl : json['image_url'] as String,
-      price : json['price'] as int,
-      rate : json['rating'] as int,
-      address : json['address'] as String,
-      phone : json['phone'] as String,
-      photos: List<String>.from(json['photos'].map((x)=> x)),
-      mapUrl : json['map_url'] as String,
-      numberOfBedrooms : json['number_of_bedrooms'] as int,
-      numberOfcupboards : json['number_of_cupboards'] as int,
-      numberOfKitchens : json['number_of_kitchens'] as int,
+      id: json['id'],
+      name: json['name'],
+      city: json['city'],
+      province: json['country'],
+      imageUrl: json['image_url'],
+      price: json['price'],
+      rate: json['rating'],
+      address: json['address'],
+      phone: json['phone'],
+      photos: json['photos'],
+      mapUrl: json['map_url'],
+      numberOfBedrooms: json['number_of_bedrooms'],
+      numberOfcupboards: json['number_of_cupboards'],
+      numberOfKitchens: json['number_of_kitchens'],
     );
   }
 }
